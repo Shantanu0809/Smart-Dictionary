@@ -12,6 +12,10 @@ def defination(wrd):
         wrd=wrd.lower()
         if wrd in data:
             return data[wrd]
+        elif wrd.title() in data:
+            return data[wrd.title()]
+        elif wrd.upper() in data:
+            return data[wrd.upper()]
         elif len(get_close_matches(wrd,data.keys())) > 0:
             confirm=input("\nDid you mean %s ? [Y/N]\t" % get_close_matches(wrd,data.keys())[0])
             confirm=confirm.lower()
